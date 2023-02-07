@@ -164,16 +164,33 @@ local section_mru = {
 	},
 }
 
-local buttons = {
+local places= {
 	type = "group",
 	val = {
 		{ type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+		{ type = "padding", val = 1 },
+		dashboard.button("d", "ﴫ  Developer", "<cmd>e ~/Developer/<CR>"),
+		dashboard.button("w", "  Downloads", "cmd>e ~/Downloads<CR>"),
+		dashboard.button("u", "󱔗  Documents", "<cmd>e ~/Documents/<CR>"),
+		dashboard.button("g", "  Config", "<cmd>e ~/.config<CR>"),
+		dashboard.button("z", "  zshrc", "<cmd>e ~/.config/zsh/.zshrc<CR>"),
+		dashboard.button("a", "  aliases", "<cmd>e ~/.config/zsh/zsh-aliases<CR>"),
+		dashboard.button("p", "  zprofile", "<cmd>e ~/.zprofile<CR>"),
+		dashboard.button("k", "  Kitty", "<cmd>e ~/.config/kitty/kitty.conf<CR>"),
+	},
+	position = "center",
+}
+
+local buttons = {
+	type = "group",
+	val = {
+		{ type = "text", val = "Quick actions", opts = { hl = "SpecialComment", position = "center" } },
 		{ type = "padding", val = 1 },
 		dashboard.button("e", "  New file", "<cmd>ene<CR>"),
 		dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
 		dashboard.button("t", "  Find text", "<cmd>Telescope live_grep<CR>"),
     dashboard.button("r", "  Recent files", "<cmd>Telescope oldfiles <CR>"),
-		dashboard.button("p", "  Projects", "<cmd>Telescope projects<CR>"),
+		-- dashboard.button("p", "  Projects", "<cmd>Telescope projects<CR>"),
 		dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC <CR>"),
 		-- dashboard.button("u", "  Update plugins", "<cmd>PackerSync<CR>"),
 		dashboard.button("q", "  Quit", "<cmd>qa<CR>"),
@@ -215,6 +232,8 @@ local config = {
 		default_header,
 		{ type = "padding", val = 2 },
 		section_mru,
+		{ type = "padding", val = 2 },
+		places,
 		{ type = "padding", val = 2 },
 		buttons,
 		{ type = "padding", val = 1 },
