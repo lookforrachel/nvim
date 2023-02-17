@@ -103,3 +103,4 @@ keymap("n", "<leader>gv", ":VimBeGood<cr>", '[G]ame: VimBeGood')
 
 -- Save & Source file
 keymap("n", "<leader><leader>x", ":w<cr>:so<cr>", 'Save & Source')
+keymap("n", "<leader><leader>r", ":w <cr> :new | r !python3 #<cr>", 'Save & [R]un')
